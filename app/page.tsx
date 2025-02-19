@@ -14,9 +14,28 @@ import { usePageScroller } from "@furman1331/page-scroller";
 
 export default function Home() {
   React.useEffect(() => {
+
+
     if (window.innerWidth > 450) {
       usePageScroller({ isAllowToScrollThroughSlides: true }).initPageScroller("#page-scroller");
     }
+
+    // Create a new Audio object
+    const audio = new Audio("/background-music.mp3");
+
+    // Set the audio to loop and autoplay
+    audio.loop = true;
+    audio.autoplay = true;
+
+    // Start playing the audio when the component mounts
+    audio.play();
+
+    // Cleanup: Pause the audio when the component unmounts
+    return () => {
+      audio.pause();
+      audio.currentTime = 0; // Reset the audio position when stopping
+    };
+
   }, [])
   return (
     <main>
