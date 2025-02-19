@@ -15,8 +15,6 @@ import Loader from "@/components/Loader";
 
 export default function Home() {
   React.useEffect(() => {
-
-
     if (window.innerWidth > 450) {
       usePageScroller({ isAllowToScrollThroughSlides: true }).initPageScroller("#page-scroller");
     }
