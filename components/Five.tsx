@@ -23,7 +23,7 @@ export default function Five() {
                         <AccordionTrigger className='text-sm md:text-lg'>How to cash out?</AccordionTrigger>
                         <AccordionContent>
                             Yes. It comes with default styles that matches the other
-                            components&apos; aesthetic.
+                            components aesthetic.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
