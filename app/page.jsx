@@ -8,8 +8,8 @@ import Four from "@/components/Four";
 import Five from "@/components/Five";
 import DownBoard from "@/components/DownBoard";
 import React from "react";
-import Pageable from "pageable";
-
+import dynamic from "next/dynamic";
+const Pageable = dynamic(() => import("pageable"), { ssr: false });
 
 export default function Home() {
   const containerRef = React.useRef(null);
