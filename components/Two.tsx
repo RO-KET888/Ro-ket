@@ -6,7 +6,6 @@ import Image from 'next/image'
 export default function Two() {
     return (
         <section>
-
             <div className='mx-auto relative'>
                 <Image
                     src={VideoBg}
