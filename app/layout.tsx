@@ -3,11 +3,13 @@ import localFont from 'next/font/local'
 import "./globals.css";
 
 const Dune = localFont({
-  src: '../assets/Font/Dune_Rise.ttf',
+  src: '../public/Dune_Rise.ttf',
+  display: 'swap',
 })
 
 const Pitviper = localFont({
-  src: '../assets/Font/Pitviper.ttf',
+  src: '../public/Pitviper.ttf',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
