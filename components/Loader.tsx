@@ -8,18 +8,6 @@ export default function Loader() {
 
     const audio = new Audio("/background-music.mp3");
     const [clicked, setClicked] = React.useState<boolean>(false)
-    React.useEffect(() => {
-        // Set the audio to loop and autoplay
-        audio.loop = true;
-        audio.autoplay = true;
-
-        // Cleanup: Pause the audio when the component unmounts
-        return () => {
-            audio.pause();
-            audio.currentTime = 0; // Reset the audio position when stopping
-        };
-
-    }, [])
 
     return (
         <section className={`fixed loader ${clicked ? 'invisible -z-10 opacity-0 transistion-all ease-linear duration-1000' : 'z-40 visible opacity-100'}`}>
