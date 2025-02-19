@@ -8,11 +8,17 @@ import Four from "@/components/Four";
 import Five from "@/components/Five";
 import DownBoard from "@/components/DownBoard";
 import React from "react";
-import ReactFullpage from '@fullpage/react-fullpage';
+import { usePageScroller } from "@furman1331/page-scroller";
+
+
 
 export default function Home() {
+  React.useEffect(() => {
+    usePageScroller({ isAllowToScrollThroughSlides: true }).initPageScroller("#page-scroller");
+  }, [])
   return (
     <main>
+      <audio loop autoPlay muted={false} src="/background-music.mp3" type="audio/mp3" />
       <div className="fixed top-0 inset-x-0 w-screen z-50 flex items-center justify-center">
         <Image
           alt="Top Board"
@@ -21,30 +27,23 @@ export default function Home() {
           className="w-full min-w-[1000px]"
         />
       </div>
-      <ReactFullpage
-      
-        render={({ state, fullpageApi }) => {
-          return (
-            <ReactFullpage.Wrapper>
-              <div data-anchor="page-1" className="section">
-                <One />
-              </div>
-              <div data-anchor="page-2" className="section">
-                <Two />
-              </div>
-              <div data-anchor="page-3" className="section">
-                <Three />
-              </div>
-              <div data-anchor="page-4" className="section">
-                <Four />
-              </div>
-              <div data-anchor="page-5" className="section">
-                <Five />
-              </div>
-            </ReactFullpage.Wrapper>
-          );
-        }}
-      />
+      <div id="page-scroller">
+        <div page-scroller-slide='true'>
+          <One />
+        </div>
+        <div page-scroller-slide='true'>
+          <Two />
+        </div>
+        <div page-scroller-slide='true'>
+          <Three />
+        </div>
+        <div page-scroller-slide='true'>
+          <Four />
+        </div>
+        <div page-scroller-slide='true'>
+          <Five />
+        </div>
+      </div>
       <DownBoard />
     </main >
   );

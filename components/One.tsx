@@ -13,7 +13,7 @@ export default function One() {
                     <p className='text-sm lg:text-2xl max-w-3xl'>Risk It, Ride It, Win It – The Game Where Every
                         Second Counts</p>
 
-                    <Link href={''} className='text-rocket text-sm lg:text-base font-medium uppercase border border-solid border-rocket py-3 bg-rocket/10 px-6 flex items-center justify-center md:max-w-[300px] w-full btn-shadow'>
+                    <Link href={''} className='text-rocket text-sm hover:scale-[1.1] transition-all ease-in lg:text-base font-medium uppercase border border-solid border-rocket py-3 bg-rocket/10 px-6 flex items-center justify-center md:max-w-[300px] w-full btn-shadow'>
                         <span>
                             Play Now
                         </span>

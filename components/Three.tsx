@@ -10,7 +10,7 @@ export default function Three() {
 
                     <p className='text-sm lg:text-lg max-w-2xl'>  Ro-Ket is an adrenaline-fueled betting game where the rocket rises or crashes based on real-time BTC prices.</p>
 
-                    <Link href={''} className='text-rocket text-sm lg:text-base font-medium uppercase border border-solid border-rocket py-3 bg-rocket/10 px-6 inline-block w-fit btn-shadow'>
+                    <Link href={''} className='text-rocket hover:scale-[1.1] transition-all ease-in text-sm lg:text-base font-medium uppercase border border-solid border-rocket py-3 bg-rocket/10 px-6 inline-block w-fit btn-shadow'>
                         <span>
                             Play Now <span className='text-[8px]'>&</span> Take Off
                         </span>

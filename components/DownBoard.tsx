@@ -10,10 +10,10 @@ export default function DownBoard() {
         <div className="fixed bottom-0 inset-x-0 w-screen z-50 flex justify-center">
             <div className="h-20 w-[350px] fixed left-1/2 -translate-x-1/2 mt-5 flex items-center flex-col gap-2">
                 <div className="flex items-center gap-4">
-                    <Link href='' className="text-xl md:text-2xl inline-block p-2 rounded-full border-2 border-rocket text-rocket">
+                    <Link href='' className="text-xl md:text-2xl inline-block p-2 rounded-full border-2 border-rocket text-rocket hover:border-white hover:text-white transition-all duration-300 ease-linear">
                         <RiTelegram2Fill />
                     </Link>
-                    <Link href='' className="text-xl md:text-2xl inline-block p-2 rounded-full border-2 border-rocket text-rocket">
+                    <Link href='' className="text-xl md:text-2xl inline-block p-2 rounded-full border-2 border-rocket text-rocket hover:border-white hover:text-white transition-all duration-300 ease-linear">
                         <RiDiscordFill />
                     </Link>
                     <Link href=''>
@@ -23,10 +23,10 @@ export default function DownBoard() {
                             <MdOutlineKeyboardDoubleArrowDown className="text-lg" />
                         </div>
                     </Link>
-                    <Link href='' className="text-xl md:text-2xl inline-block p-2 rounded-full border-2 border-rocket text-rocket">
+                    <Link href='' className="text-xl md:text-2xl inline-block p-2 rounded-full border-2 border-rocket text-rocket hover:border-white hover:text-white transition-all duration-300 ease-linear">
                         <RiTwitterXLine />
                     </Link>
-                    <Link href='' className="text-xl md:text-2xl inline-block p-2 rounded-full border-2 border-rocket text-rocket">
+                    <Link href='' className="text-xl md:text-2xl inline-block p-2 rounded-full border-2 border-rocket text-rocket hover:border-white hover:text-white transition-all duration-300 ease-linear">
                         <IoDocumentText />
                     </Link>
                 </div>
