@@ -6,7 +6,7 @@ import RocketGif from '@/assets/images/gifs/Ro-ketlandingpage.gif'
 export default function One() {
     return (
         <section>
-            <div className='grid md:grid-cols-5 w-full items-center'>
+            <div className='grid md:grid-cols-5 w-full items-center pt-20 md:pt-0'>
                 <div className='space-y-5 md:col-span-3'>
                     <h1 className='text-2xl lg:text-6xl font-semibold'>RO-KET YOUR WINS</h1>
 
