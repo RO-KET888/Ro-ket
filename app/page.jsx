@@ -14,14 +14,16 @@ import Loader from "@/components/Loader";
 
 
 export default function Home() {
+  const [isPlaying, setIsPlaying] = React.useState(false);
   React.useEffect(() => {
     if (window.innerWidth > 450) {
       usePageScroller({ isAllowToScrollThroughSlides: true }).initPageScroller("#page-scroller");
     }
   }, [])
+
   return (
     <main>
-      <div className="fixed -top-3 md:top-0 inset-x-0 w-screen z-50 flex items-center justify-center">
+      <div className={`fixed inset-x-0 w-screen z-50 flex items-center justify-center transition-transform duration-1000 ease-in -top-3 md:top-0 ${!isPlaying ? '-translate-y-40' : 'translate-y-0'}`}>
         <Image
           alt="Top Board"
           src={TopBoard}
@@ -29,7 +31,10 @@ export default function Home() {
           className="w-full min-w-[1000px]"
         />
       </div>
-      <Loader/>
+      <Loader
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+      />
       <div id="page-scroller">
         <div page-scroller-slide='true'>
           <One />
@@ -47,7 +52,9 @@ export default function Home() {
           <Five />
         </div>
       </div>
-      <DownBoard />
+      <DownBoard
+        isPlaying={isPlaying}
+      />
     </main >
   );
 }

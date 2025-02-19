@@ -3,35 +3,36 @@ import Image from "next/image";
 import RocketLogo from '@/assets/images/background/RoketStacked.svg'
 import React from "react";
 
+interface Load {
+    isPlaying: boolean
+    setIsPlaying: any
+}
 
-export default function Loader() {
-
-
-    const [isPlaying, setIsPlaying] = React.useState(false);
-    const audioRef = React.useRef < HTMLAudioElement> (null);
+export default function Loader(prop: Load) {
+    const audioRef = React.useRef<HTMLAudioElement>(null);
 
     React.useEffect(() => {
         if (typeof window !== 'undefined' && audioRef.current) {
-            if (isPlaying) {
+            if (prop.isPlaying) {
                 audioRef.current.play();  // Play the audio
             } else {
                 audioRef.current.pause();  // Pause the audio
             }
         }
-    }, [isPlaying]);
+    }, [prop.isPlaying]);
 
     const toggleAudio = () => {
-        setIsPlaying(true); // Toggle play/pause state
+        prop.setIsPlaying(true); // Toggle play/pause state
     };
 
     return (
-        <section className={`fixed loader ${isPlaying ? 'invisible -z-10 opacity-0 transistion-all ease-linear duration-1000' : 'z-40 visible opacity-100'}`}>
-            <div className="space-y-3">
+        <section className={`fixed loader ${prop.isPlaying ? 'invisible -z-10 opacity-0 transistion-all ease-linear duration-1000' : 'z-40 visible opacity-100'}`}>
+            <div className="space-y-3 flex items-center flex-col">
                 <Image
                     alt="Rocket Logo"
                     src={RocketLogo}
                     sizes="100%"
-                    className="h-40 w-auto"
+                    className="h-40 md:h-72 w-auto"
                 />
                 <button
                     onClick={toggleAudio}
