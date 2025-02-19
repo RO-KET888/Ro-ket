@@ -14,12 +14,14 @@ import { usePageScroller } from "@furman1331/page-scroller";
 
 export default function Home() {
   React.useEffect(() => {
-    usePageScroller({ isAllowToScrollThroughSlides: true }).initPageScroller("#page-scroller");
+    if (window.innerWidth > 450) {
+      usePageScroller({ isAllowToScrollThroughSlides: true }).initPageScroller("#page-scroller");
+    }
   }, [])
   return (
     <main>
       <audio loop autoPlay muted={false} src="/background-music.mp3" type="audio/mp3" />
-      <div className="fixed top-0 inset-x-0 w-screen z-50 flex items-center justify-center">
+      <div className="fixed -top-3 md:top-0 inset-x-0 w-screen z-50 flex items-center justify-center">
         <Image
           alt="Top Board"
           src={TopBoard}
