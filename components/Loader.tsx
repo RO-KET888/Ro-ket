@@ -12,7 +12,7 @@ export default function Loader() {
 
     React.useEffect(() => {
         // Play the background music when component is mounted
-        if (isPlaying) {
+        if (typeof window !== 'undefined' && isPlaying && audioRef.current) {
             audioRef.current.play();
         }
 
@@ -51,5 +51,3 @@ export default function Loader() {
         </section>
     )
 }
-
-
