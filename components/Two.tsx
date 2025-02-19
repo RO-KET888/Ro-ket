@@ -13,7 +13,7 @@ export default function Two() {
                     alt='Video Background'
                     sizes='100%'
                     // fill
-                    className='h-full max-h-96 w-full'
+                    className='h-full max-h-[500px] w-full'
                 />
             </div>
         </section>

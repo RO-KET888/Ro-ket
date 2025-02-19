@@ -22,6 +22,13 @@ export default function Home() {
 
   return (
     <main>
+      <ReactAudioPlayer
+        src="/background-music.mp3"
+        autoPlay
+        loop
+        volume={1}
+        controls={false}
+      />
       <div className="fixed -top-3 md:top-0 inset-x-0 w-screen z-50 flex items-center justify-center">
         <Image
           alt="Top Board"
@@ -31,31 +38,23 @@ export default function Home() {
         />
       </div>
       <div id="page-scroller">
-        <div page-scroller-slide='true'>
+        <div>
           <One />
         </div>
-        <div page-scroller-slide='true'>
+        <div>
           <Two />
         </div>
-        <div page-scroller-slide='true'>
+        <div>
           <Three />
         </div>
-        <div page-scroller-slide='true'>
+        <div>
           <Four />
         </div>
-        <div page-scroller-slide='true'>
+        <div>
           <Five />
         </div>
       </div>
       <DownBoard />
-
-      <ReactAudioPlayer
-        src="/background-music.mp3"
-        autoPlay
-        loop
-        volume={1}
-        controls={false}
-      />
     </main >
   );
 }
