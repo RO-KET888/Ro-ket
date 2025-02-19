@@ -14,14 +14,10 @@ import ReactAudioPlayer from 'react-audio-player';
 
 export default function Home() {
 
-  const audioRef = React.useRef<HTMLAudioElement>(null); // Reference to the audio element
-  const [hasScrolled, setHasScrolled] = React.useState(false);
-
   React.useEffect(() => {
     if (window.innerWidth > 450) {
       usePageScroller({ isAllowToScrollThroughSlides: true }).initPageScroller("#page-scroller");
     }
-
   }, [])
 
   return (
