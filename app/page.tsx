@@ -9,34 +9,21 @@ import Five from "@/components/Five";
 import DownBoard from "@/components/DownBoard";
 import React from "react";
 import { usePageScroller } from "@furman1331/page-scroller";
-
+import ReactAudioPlayer from 'react-audio-player';
 
 
 export default function Home() {
+
+  const audioRef = React.useRef<HTMLAudioElement>(null); // Reference to the audio element
+  const [hasScrolled, setHasScrolled] = React.useState(false);
+
   React.useEffect(() => {
-
-
     if (window.innerWidth > 450) {
       usePageScroller({ isAllowToScrollThroughSlides: true }).initPageScroller("#page-scroller");
     }
 
-    // Create a new Audio object
-    const audio = new Audio("/background-music.mp3");
-
-    // Set the audio to loop and autoplay
-    audio.loop = true;
-    audio.autoplay = true;
-
-    // Start playing the audio when the component mounts
-    audio.play();
-
-    // Cleanup: Pause the audio when the component unmounts
-    return () => {
-      audio.pause();
-      audio.currentTime = 0; // Reset the audio position when stopping
-    };
-
   }, [])
+
   return (
     <main>
       <div className="fixed -top-3 md:top-0 inset-x-0 w-screen z-50 flex items-center justify-center">
@@ -65,6 +52,14 @@ export default function Home() {
         </div>
       </div>
       <DownBoard />
+
+      <ReactAudioPlayer
+        src="/background-music.mp3"
+        autoPlay
+        loop
+        volume={1}
+        controls={false}
+      />
     </main >
   );
 }
