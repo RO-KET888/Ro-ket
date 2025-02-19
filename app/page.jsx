@@ -9,6 +9,7 @@ import Five from "@/components/Five";
 import DownBoard from "@/components/DownBoard";
 import React from "react";
 import { usePageScroller } from "@furman1331/page-scroller";
+import Loader from "@/components/Loader";
 
 
 
@@ -19,23 +20,6 @@ export default function Home() {
     if (window.innerWidth > 450) {
       usePageScroller({ isAllowToScrollThroughSlides: true }).initPageScroller("#page-scroller");
     }
-
-    // Create a new Audio object
-    const audio = new Audio("/background-music.mp3");
-
-    // Set the audio to loop and autoplay
-    audio.loop = true;
-    audio.autoplay = true;
-
-    // Start playing the audio when the component mounts
-    audio.play();
-
-    // Cleanup: Pause the audio when the component unmounts
-    return () => {
-      audio.pause();
-      audio.currentTime = 0; // Reset the audio position when stopping
-    };
-
   }, [])
   return (
     <main>
@@ -47,6 +31,7 @@ export default function Home() {
           className="w-full min-w-[1000px]"
         />
       </div>
+      <Loader/>
       <div id="page-scroller">
         <div page-scroller-slide='true'>
           <One />

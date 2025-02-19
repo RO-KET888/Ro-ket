@@ -24,7 +24,7 @@ section>div{
   box-shadow: 0px 3px 22.36px 6px #14EEEC75;
 }
 
-main{
+main,.loader{
   background-image: url(../assets/images/gifs/How_to_play.gif);
   background-size: cover;
   background-repeat: no-repeat;

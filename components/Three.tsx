@@ -5,7 +5,7 @@ import QrCode from '@/assets/images/background/qr-code.svg'
 export default function Three() {
     return (
         <section>
-            <div className='grid md:grid-cols-3 w-full items-center'>
+            <div className='grid md:grid-cols-3 w-full items-center gap-14'>
                 <div className='space-y-4 lg:space-y-7 md:col-span-2'>
                     <h3 className='text-2xl md:text-3xl font-semibold'>Scan to Play Instantly</h3>
 

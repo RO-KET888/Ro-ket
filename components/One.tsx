@@ -4,6 +4,7 @@ import React from 'react'
 import RocketGif from '@/assets/images/gifs/Ro-ketlandingpage.gif'
 
 export default function One() {
+    
     return (
         <section>
             <div className='grid md:grid-cols-5 w-full items-center pt-20 md:pt-0'>
