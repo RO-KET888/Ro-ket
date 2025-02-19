@@ -28,15 +28,18 @@ export default function Four() {
                         breakpoints={{
                             640: {
                                 slidesPerView: 1,
-                                autoplay: true
+                                autoplay: true,
+                                loop: true
                             },
                             760: {
                                 slidesPerView: 2,
-                                autoplay: true
+                                autoplay: true,
+                                loop: true
                             },
                             1024: {
                                 slidesPerView: 3,
-                                autoplay: false
+                                autoplay: false,
+                                loop: false
                             },
                         }}
                         modules={[Autoplay]}

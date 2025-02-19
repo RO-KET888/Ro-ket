@@ -6,8 +6,8 @@ import RocketGif from '@/assets/images/gifs/Ro-ketlandingpage.gif'
 export default function One() {
     return (
         <section>
-            <div className='grid md:grid-cols-3 w-full items-center'>
-                <div className='space-y-5 md:col-span-2'>
+            <div className='grid md:grid-cols-5 w-full items-center'>
+                <div className='space-y-5 md:col-span-3'>
                     <h1 className='text-2xl lg:text-6xl font-semibold'>RO-KET YOUR WINS</h1>
 
                     <p className='text-sm lg:text-2xl max-w-3xl'>Risk It, Ride It, Win It – The Game Where Every
@@ -19,12 +19,12 @@ export default function One() {
                         </span>
                     </Link>
                 </div>
-                <div className='md:col-span-1'>
+                <div className='md:col-span-2'>
                     <Image
                         src={RocketGif}
                         alt='Ro-Ket'
                         sizes='100%'
-                        className='w-80 h-auto'
+                        className='w-80 md:w-full h-auto'
                     />
                 </div>
             </div>
