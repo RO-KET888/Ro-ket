@@ -8,19 +8,16 @@ export default function Loader() {
 
 
     const [isPlaying, setIsPlaying] = React.useState(false);
-    const audioRef = React.useRef(new Audio('/background-music.mp3'));
+    const audioRef = React.useRef < HTMLAudioElement> (null);
 
     React.useEffect(() => {
-        // Play the background music when component is mounted
-        if (typeof window !== 'undefined' && isPlaying && audioRef.current) {
-            audioRef.current.play();
+        if (typeof window !== 'undefined' && audioRef.current) {
+            if (isPlaying) {
+                audioRef.current.play();  // Play the audio
+            } else {
+                audioRef.current.pause();  // Pause the audio
+            }
         }
-
-        // Cleanup function to stop the audio when component unmounts
-        return () => {
-            audioRef.current.pause();
-            audioRef.current.currentTime = 0; // Reset to the start
-        };
     }, [isPlaying]);
 
     const toggleAudio = () => {
