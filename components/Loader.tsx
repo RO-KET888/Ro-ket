@@ -26,7 +26,7 @@ export default function Loader(prop: Load) {
     };
 
     return (
-        <section className={`fixed loader ${prop.isPlaying ? 'invisible -z-10 opacity-0 transistion-all ease-linear duration-1000' : 'z-40 visible opacity-100'}`}>
+        <section className={`fixed inset-0 loader ${prop.isPlaying ? 'invisible -z-10 opacity-0 transistion-all ease-linear duration-1000' : 'z-40 visible opacity-100'}`}>
             <div className="space-y-3 flex items-center flex-col">
                 <Image
                     alt="Rocket Logo"
