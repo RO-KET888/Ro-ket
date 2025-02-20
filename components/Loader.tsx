@@ -19,6 +19,7 @@ export default function Loader(prop: Load) {
                 audioRef.current.pause();  // Pause the audio
             }
         }
+        
     }, [prop.isPlaying]);
 
     const toggleAudio = () => {
