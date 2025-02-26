@@ -35,7 +35,7 @@ export default function Home() {
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
       />
-      <div id="page-scroller">
+      <div id="page-scroller" className={isPlaying ? 'block pt-24 md:pt-0 pb-40 md:pb-0' : 'hidden'}>
         <div page-scroller-slide='true'>
           <One />
         </div>

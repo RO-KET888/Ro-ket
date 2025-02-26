@@ -19,6 +19,16 @@ export default function Loader(prop: Load) {
                 audioRef.current.pause();  // Pause the audio
             }
         }
+
+        return () => {
+            // Cleanup: Stop and reset audio when component unmounts
+            if (audioRef.current && prop.isPlaying) {
+                audioRef.current.pause();
+                audioRef.current.currentTime = 0; // Reset playback position
+                audioRef.current = null;
+            }
+        };
+
     }, [prop.isPlaying]);
 
     const toggleAudio = () => {
@@ -26,7 +36,7 @@ export default function Loader(prop: Load) {
     };
 
     return (
-        <section className={`fixed loader ${prop.isPlaying ? 'invisible -z-10 opacity-0 transistion-all ease-linear duration-1000' : 'z-40 visible opacity-100'}`}>
+        <section className={`fixed inset-0 loader ${prop.isPlaying ? 'invisible -z-10 opacity-0 transistion-all ease-linear duration-1000' : 'z-40 visible opacity-100'}`}>
             <div className="space-y-3 flex items-center flex-col">
                 <Image
                     alt="Rocket Logo"

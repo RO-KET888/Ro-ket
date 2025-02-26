@@ -15,8 +15,8 @@ import { Autoplay } from 'swiper/modules';
 export default function Four() {
     return (
         <section>
-            <div className='space-y-7'>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl text-center font-semibold'>why play ro-ket?</h2>
+            <div className='space-y-8'>
+                <h2 className='text-2xl md:text-4xl lg:text-5xl text-center font-semibold'>why play ro-ket?</h2>
                 <div className="flex items-center justifyy-center">
                     <Swiper
                         spaceBetween={20}
@@ -72,7 +72,7 @@ export default function Four() {
 
 
                 </div>
-                <p className='text-sm md:text-base lg:text-lg max-w-4xl mx-auto text-center leading-[1.7]'>Ro-Ket is an adrenaline-fueled betting game where the rocket rises or crashes based on real-time BTC prices.</p>
+                <p className='text-xs md:text-base lg:text-lg max-w-4xl mx-auto text-center leading-[1.7]'>Ro-Ket is an adrenaline-fueled betting game where the rocket rises or crashes based on real-time BTC prices.</p>
             </div>
         </section>
     )

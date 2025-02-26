@@ -14,22 +14,21 @@ export default function Five() {
                 <h2 className='text-2xl lg:text-4xl text-center font-semibold'>FREQUENTLY ASKED QUESTIONS</h2>
                 <Accordion type="single" collapsible className="w-full space-y-3">
                     <AccordionItem value="item-1">
-                        <AccordionTrigger className='text-sm md:text-lg'>how to play?</AccordionTrigger>
+                        <AccordionTrigger className='text-sm md:text-lg'>How does the game work?</AccordionTrigger>
                         <AccordionContent>
-                            Yes. It adheres to the WAI-ARIA design pattern.
+                        RO-KET is unique because the game uses BTC/USD price movements to determine when the rocket crashes. No random number generators—just real-time Bitcoin market action.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
-                        <AccordionTrigger className='text-sm md:text-lg'>How to cash out?</AccordionTrigger>
+                        <AccordionTrigger className='text-sm md:text-lg'>Can I play for free and win real money?</AccordionTrigger>
                         <AccordionContent>
-                            Yes. It comes with default styles that matches the other
-                            components aesthetic.
+                        Yes! New players get 7 days of free play, and you earn an extra 7 days for each friend you refer. Play for free and win real prizes!
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
-                        <AccordionTrigger className='text-sm md:text-lg'>Tournaments?</AccordionTrigger>
+                        <AccordionTrigger className='text-sm md:text-lg'>How do I withdraw my winnings?</AccordionTrigger>
                         <AccordionContent>
-                            Yes. It's animated by default, but you can disable it if you prefer.
+                        Withdrawals go through TONConnect directly to your Telegram Wallet or TON Keeper.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
