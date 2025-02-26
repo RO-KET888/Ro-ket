@@ -19,7 +19,16 @@ export default function Loader(prop: Load) {
                 audioRef.current.pause();  // Pause the audio
             }
         }
-        
+
+        return () => {
+            // Cleanup: Stop and reset audio when component unmounts
+            if (audioRef.current && prop.isPlaying) {
+                audioRef.current.pause();
+                audioRef.current.currentTime = 0; // Reset playback position
+                audioRef.current = null;
+            }
+        };
+
     }, [prop.isPlaying]);
 
     const toggleAudio = () => {

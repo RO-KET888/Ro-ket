@@ -14,7 +14,7 @@ export default function One() {
                     <p className='text-sm lg:text-xl max-w-3xl lg:leading-[1.8]'>Risk It, Ride It, Win It – The Game Where Every
                         Second Counts</p>
 
-                    <Link href={''} className='text-rocket text-sm hover:scale-[1.1] transition-all ease-in lg:text-base font-medium uppercase border border-solid border-rocket py-4 bg-rocket/10 px-6 flex items-center justify-center max-w-[340px] w-full btn-shadow'>
+                    <Link href={'https://t.me/roketgamebot'} className='text-rocket text-sm hover:scale-[1.1] transition-all ease-in lg:text-base font-medium uppercase border border-solid border-rocket py-4 bg-rocket/10 px-6 flex items-center justify-center max-w-[340px] w-full btn-shadow'>
                         <span>
                             Play Now
                         </span>
