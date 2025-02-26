@@ -14,7 +14,8 @@ export default function Loader(prop: Load) {
     React.useEffect(() => {
         if (typeof window !== 'undefined' && audioRef.current) {
             if (prop.isPlaying) {
-                audioRef.current.play();  // Play the audio
+                audioRef.current.play();
+                audioRef.current.volume = 0.2  // Play the audio
             } else {
                 audioRef.current.pause();  // Pause the audio
             }
