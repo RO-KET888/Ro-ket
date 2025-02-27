@@ -17,7 +17,7 @@ export default function Home() {
   const [fullpage, setFullpage] = React.useState(null);
 
 
-  if (window.innerWidth < 760) {
+  if (typeof window !== "undefined" && window.innerWidth < 760) {
     return (
       <main>
         <div className={`fixed inset-x-0 w-screen z-50 flex items-center justify-center transition-transform duration-300 ease-in -top-3 md:top-0 ${!isPlaying ? '-translate-y-40' : 'translate-y-0'}`}>
