@@ -34,6 +34,11 @@ main,.loader{
 }
 
 
+.fp-warning, .fp-watermark{
+  display: none
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

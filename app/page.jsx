@@ -8,53 +8,99 @@ import Four from "@/components/Four";
 import Five from "@/components/Five";
 import DownBoard from "@/components/DownBoard";
 import React from "react";
-import { usePageScroller } from "@furman1331/page-scroller";
 import Loader from "@/components/Loader";
-
+import ReactFullpage from "@fullpage/react-fullpage";
 
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = React.useState(false);
-  React.useEffect(() => {
-    if (window.innerWidth > 450) {
-      usePageScroller({ isAllowToScrollThroughSlides: true }).initPageScroller("#page-scroller");
-    }
-  }, [])
+  const [fullpage, setFullpage] = React.useState(null);
 
+
+  if (window.innerWidth < 760) {
+    return (
+      <main>
+        <div className={`fixed inset-x-0 w-screen z-50 flex items-center justify-center transition-transform duration-300 ease-in -top-3 md:top-0 ${!isPlaying ? '-translate-y-40' : 'translate-y-0'}`}>
+          <Image
+            alt="Top Board"
+            src={TopBoard}
+            sizes="100%"
+            className="w-full min-w-[1000px]"
+          />
+        </div>
+        <Loader
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+        />
+        <div className={isPlaying ? 'block pt-24 md:pt-0 pb-40 md:pb-0 md:hidden overflow-y-auto' : 'hidden'}>
+          <One />
+          <Two />
+          <Three />
+          <Four />
+          <Five />
+        </div>
+
+        <DownBoard
+          isPlaying={isPlaying}
+        // route={fullpageApi}
+        />
+      </main >
+    )
+
+  }
   return (
     <main>
-      <div className={`fixed inset-x-0 w-screen z-50 flex items-center justify-center transition-transform duration-1000 ease-in -top-3 md:top-0 ${!isPlaying ? '-translate-y-40' : 'translate-y-0'}`}>
-        <Image
-          alt="Top Board"
-          src={TopBoard}
-          sizes="100%"
-          className="w-full min-w-[1000px]"
-        />
-      </div>
       <Loader
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
       />
-      <div id="page-scroller" className={isPlaying ? 'block pt-24 md:pt-0 pb-40 md:pb-0' : 'hidden'}>
-        <div page-scroller-slide='true'>
-          <One />
+      <div className={isPlaying ? 'block pt-24 md:pt-0 pb-40 md:pb-0' : 'hidden'}>
+        <div className={`fixed inset-x-0 w-screen z-50 flex items-center justify-center transition-transform duration-300 ease-in -top-3 md:top-0 ${!isPlaying ? '-translate-y-40' : 'translate-y-0'}`}>
+          <Image
+            alt="Top Board"
+            src={TopBoard}
+            sizes="100%"
+            className="w-full min-w-[1000px]"
+          />
         </div>
-        <div page-scroller-slide='true'>
-          <Two />
-        </div>
-        <div page-scroller-slide='true'>
-          <Three />
-        </div>
-        <div page-scroller-slide='true'>
-          <Four />
-        </div>
-        <div page-scroller-slide='true'>
-          <Five />
-        </div>
+        <ReactFullpage
+          navigation={false}
+          credits={{
+            enabled: false,
+          }}
+          touchSensitivity={5}
+          scrollingSpeed={1000}
+          render={({ fullpageApi }) => {
+            setFullpage(fullpageApi)
+            return (
+              <>
+                <ReactFullpage.Wrapper>
+                  <div className="section">
+                    <One />
+                  </div>
+                  <div className="section">
+                    <Two />
+                  </div>
+                  <div className="section">
+                    <Three />
+                  </div>
+                  <div className="section">
+                    <Four />
+                  </div>
+                  <div className="section">
+                    <Five />
+                  </div>
+                </ReactFullpage.Wrapper>
+              </>
+            );
+          }}
+        />
+        <DownBoard
+          isPlaying={isPlaying}
+          route={fullpage}
+        />
       </div>
-      <DownBoard
-        isPlaying={isPlaying}
-      />
-    </main >
+    </main>
+
   );
 }

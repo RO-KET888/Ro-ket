@@ -7,8 +7,8 @@ export default function One() {
     
     return (
         <section>
-            <div className='grid md:grid-cols-5 w-full items-center md:pt-0'>
-                <div className='md:col-span-3 flex flex-col item  md:items-start gap-4 md:gap-5 relative z-20 text-center md:text-left'>
+            <div className='grid md:grid-cols-5 w-full items-center justify-center md:pt-0'>
+                <div className='md:col-span-3 flex flex-col items-center md:items-start gap-4 md:gap-5 relative z-20 text-center md:text-left'>
                     <h1 className='text-2xl lg:text-5xl xl:text-[56px] font-semibold'>RO-KET YOUR WINS</h1>
 
                     <p className='text-sm lg:text-xl max-w-3xl lg:leading-[1.8]'>Risk It, Ride It, Win It – The Game Where Every
@@ -25,7 +25,7 @@ export default function One() {
                         src={RocketGif}
                         alt='Ro-Ket'
                         sizes='100%'
-                        className='w-80 md:w-full h-auto'
+                        className='w-80 md:w-full h-auto mx-auto'
                     />
                 </div>
             </div>
