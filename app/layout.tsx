@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${Dune.className} ${Pitviper.className} antialiased`}
+        className={`${Dune.className} ${Pitviper.className} antialiased md:overflow-hidden`}
       >
         {children}
       </body>

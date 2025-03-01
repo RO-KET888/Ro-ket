@@ -3,20 +3,25 @@
 @tailwind utilities;
 
 body {
-  background: #001616;
+  background-image: url(../assets/images/gifs/How_to_play.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #001616;
   color: white;
   font-family: 'Dune', 'Dune Fallback' !important;
 }
 
-a{
+a {
   font-family: 'Pitviper', 'Pitviper Fallback' !important;
 }
 
 section {
   @apply py-20 md:py-0 md:min-h-[100vh] flex items-center justify-center px-6 md:px-12 lg:px-20 w-screen
-} 
+}
 
-section>div{
+section>div {
   @apply max-w-screen-2xl
 }
 
@@ -24,7 +29,8 @@ section>div{
   box-shadow: 0px 3px 22.36px 6px #14EEEC75;
 }
 
-main,.loader{
+main,
+.loader {
   background-image: url(../assets/images/gifs/How_to_play.gif);
   background-size: cover;
   background-repeat: no-repeat;
@@ -34,7 +40,8 @@ main,.loader{
 }
 
 
-.fp-warning, .fp-watermark{
+.fp-warning,
+.fp-watermark {
   display: none
 }
 
@@ -67,6 +74,7 @@ main,.loader{
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -99,6 +107,7 @@ main,.loader{
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

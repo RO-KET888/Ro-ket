@@ -15,7 +15,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 export default function Home() {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [fullpage, setFullpage] = React.useState(null);
-
+  const [onScroll, setOnScroll] = React.useState(false)
 
   if (typeof window !== "undefined" && window.innerWidth < 760) {
     return (
@@ -42,7 +42,8 @@ export default function Home() {
 
         <DownBoard
           isPlaying={isPlaying}
-        // route={fullpageApi}
+          route={fullpage}
+          setOnScroll={setOnScroll}
         />
       </main >
     )
@@ -70,6 +71,9 @@ export default function Home() {
           }}
           touchSensitivity={5}
           scrollingSpeed={1000}
+          onLeave={(origin, destination, direction) => {
+            if (onScroll) return false; // Prevent scrolling
+          }}
           render={({ fullpageApi }) => {
             setFullpage(fullpageApi)
             return (
@@ -98,6 +102,7 @@ export default function Home() {
         <DownBoard
           isPlaying={isPlaying}
           route={fullpage}
+          setOnScroll={setOnScroll}
         />
       </div>
     </main>
